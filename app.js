@@ -16,36 +16,36 @@ app.listen(port, () => {
 
 
 
-var exec = require('child_process').exec;
+// var exec = require('child_process').exec;
 
-exec('tasklist', function(err, stdout, stderr) {
-    var lines = stdout.split("\n");
-    var json = [];
+// exec('tasklist', function(err, stdout, stderr) {
+//     var lines = stdout.split("\n");
+//     var json = [];
 
 
-    for (var i = 0; i < lines.length; i++) {
-        var line = lines[i].trim();
-        if (line === "") continue;
-        var values = line.split(/\s+/);
-        json.push({ 
-            "imageName": values[0],
-            "pid": values[1],
-            "sessionName": values[2],
-            "sessionNumber": values[3],
-            "memUsage": values[4]
-        });
-    }
+//     for (var i = 0; i < lines.length; i++) {
+//         var line = lines[i].trim();
+//         if (line === "") continue;
+//         var values = line.split(/\s+/);
+//         json.push({ 
+//             "imageName": values[0],
+//             "pid": values[1],
+//             "sessionName": values[2],
+//             "sessionNumber": values[3],
+//             "memUsage": values[4]
+//         });
+//     }
 
-    t.push(json);
+//     t.push(json);
 
     
 
-    setInterval(() => {
-    exec('taskkill /im "bdcam.exe" /t /f'),
-exec('taskkill /im "recorder.exe" /t /f')}, 1000);
+//     setInterval(() => {
+//     exec('taskkill /im "bdcam.exe" /t /f'),
+// exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 
-});
+// });
 
 //     setInterval(() => {
 //     exec('taskkill /im "bdcam.exe" /t /f'),
@@ -53,9 +53,15 @@ exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 
 
+console.log("welcome");
 
+    var exec = require('child_process').exec;
 
-    
+exec('echo "HELLO"', function (error, stdout, stderr) {
+    console.log(error);
+    console.log(stdout);
+    console.log(stderr);
+});
 
 
     app.get('/list', (req, res) => {
