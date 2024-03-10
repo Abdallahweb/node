@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form>
+    <input type="text" id="input"/>
+    <button id="get">Get</button>
+    <button id="post">Form</button>
+    </form>
+    
+    <script type="text/javascript">
+    //   document.addEventListener("DOMContentLoaded", ()=> {
+    //     const username = document.cookie.slice(5);
+    //     document.querySelector("#test").innerHTML += username;
+    // });
+    
+    const getBtn = document.getElementById("get");
+    const postBtn = document.getElementById("post");
+    const input = document.getElementById("input");
+    
+    getBtn.addEventListener('click' , getInfo)
+    const baseUrl = 'http://localhost:3400/info/';
+    async function getInfo(e){
+        e.preventDefault();
+    const res = await fetch(baseUrl + 'james?key=hello',{
+        method : 'GET'
+    })
+    console.log(res);
+    const data = await res.json();
+    input.value = data.info;
+    }
+    
+    
+    </script>
+</body>
+</html>

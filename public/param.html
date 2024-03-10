@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GraphQL Fetch API Example</title>
+</head>
+<body>
+
+<div style="width: 500px;height:300px;margin:50px auto;padding: 100px;   text-align: center;background-color: #eee;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+  <h1 id="data"></h1>
+  <h1 id="native"></h1>
+  <h1 id="capital"></h1>
+  <h1 id="emoji"></h1>
+  <h1 id="currency"></h1>
+
+
+</div>
+  <script>
+    
+const url = 'https://countries.trevorblades.com/graphql';
+
+const GET_COUNTRY = `query Query ($criteria: ID!){
+  country(code: $criteria) {
+    name
+    native
+    capital
+    emoji
+    currency
+    languages {
+      name
+    }
+  }
+}`;
+var coun = "EG";
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    query: GET_COUNTRY,
+    variables: {
+      criteria: coun
+    }
+  })
+};
+
+const fetchAPI = async () => {
+  try {
+    const result = await fetch(
+      url,
+      options
+    );
+    const data = await result.json();
+
+    document.getElementById("data").innerHTML = data.data.country.name;
+    document.getElementById("native").innerHTML = data.data.country.native;
+    document.getElementById("capital").innerHTML = data.data.country.capital;
+    document.getElementById("emoji").innerHTML = data.data.country.emoji;
+    document.getElementById("currency").innerHTML = data.data.country.currency;
+
+
+
+    // document.write(data.data.country.name);
+  } catch (err) {
+    console.info(err)
+  }
+}
+ fetchAPI();
+
+
+  </script>
+</body>
+</html>
