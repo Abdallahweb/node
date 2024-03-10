@@ -6,7 +6,7 @@ const t = [];
 
 
 app.get('/', (req, res) => {
-  res.send(t)
+  res.send("ki")
 })
 
 app.listen(port, () => {
