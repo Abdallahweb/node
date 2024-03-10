@@ -66,6 +66,7 @@ exec('echo "HELLO"', function (error, stdout, stderr) {
 
     app.get('/list', (req, res) => {
         res.send("welcome");
+            console.log("welcome");
         // res.json([{"name":"tt"},{"name":"gg"}]);
     });
     
