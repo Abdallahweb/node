@@ -6,7 +6,6 @@ const t = [];
 app.use(express.static(path.join(__dirname + '/public')));
 
 
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -14,6 +13,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
+
 
 
 var exec = require('child_process').exec;
