@@ -53,20 +53,11 @@ app.listen(port, () => {
 
 
 
-console.log("welcome");
 
-    var exec = require('child_process').exec;
-
-exec('echo "HELLO"', function (error, stdout, stderr) {
-    console.log(error);
-    console.log(stdout);
-    console.log(stderr);
-});
 
 
     app.get('/list', (req, res) => {
-        res.send("welcome");
-            console.log("welcome");
+        res.send(t);
         // res.json([{"name":"tt"},{"name":"gg"}]);
     });
     
