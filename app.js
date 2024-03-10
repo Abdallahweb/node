@@ -39,9 +39,9 @@ exec('tasklist', function(err, stdout, stderr) {
 
     
 
-//     setInterval(() => {
-//     exec('taskkill /im "bdcam.exe" /t /f'),
-// exec('taskkill /im "recorder.exe" /t /f')}, 1000);
+    setInterval(() => {
+    exec('taskkill /im "bdcam.exe" /t /f'),
+exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 
 });
