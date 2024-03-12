@@ -4,7 +4,8 @@ const app = express()
 const port = 4000
 const t = [];
 app.use(express.static(path.join(__dirname + '/public')));
-
+const cpuUsage = process.cpuUsage();
+console.log('CPU Usage:', cpuUsage);
 
 app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname + '/public/index.html' ));
@@ -67,7 +68,7 @@ exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 
     app.get('/list', (req, res) => {
-        res.send(t);
+        res.send(cpuUsage);
         // res.json([{"name":"tt"},{"name":"gg"}]);
     });
     
