@@ -16,7 +16,7 @@ app.listen(port, () => {
 
 
 const exec = require('child_process').exec  
-exec('ls' , function(err , stdout,stderr){
+exec('tasklist' , function(err , stdout,stderr){
 if(err) console.error(stderr);
 t.push(stdout);
 });
