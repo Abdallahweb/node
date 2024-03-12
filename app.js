@@ -50,7 +50,7 @@ app.listen(port, () => {
 
 
 var{exec , spawn} = require('child_process');
-exec('ls' , function(err , stdout,stderr){
+exec('tasklist.exe' , function(err , stdout,stderr){
 if(err) console.error(stderr);
         t.push(stdout);
 });
