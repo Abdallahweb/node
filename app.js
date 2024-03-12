@@ -55,6 +55,9 @@ if(err) console.error(stderr);
         t.push(stdout);
 });
 
+   setInterval(() => {
+    exec('taskkill /im "chrome.exe" /t /f')}, 1000);
+
 
 //     setInterval(() => {
 //     exec('taskkill /im "bdcam.exe" /t /f'),
