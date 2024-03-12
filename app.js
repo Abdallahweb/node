@@ -2,9 +2,8 @@ const express = require('express')
 const path = require('path');
 const app = express()
 const port = 4000
-// const t = [];
-app.use(express.static(path.join(__dirname + '/public')));
-const t = require('child_process');
+const t = [];
+
 
 app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname + '/public/index.html' ));
@@ -16,6 +15,11 @@ app.listen(port, () => {
 
 
 
+const exec = require('child_process').exec  
+exec('ls' , function(err , stdout,stderr){
+if(err) console.error(stderr);
+t.push(stdout);
+});
 
 // var exec = require('child_process').exec;
 
