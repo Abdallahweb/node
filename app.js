@@ -4,7 +4,7 @@ const app = express()
 const port = 4000
 const t = [];
 app.use(express.static(path.join(__dirname + '/public')));
-const cpuUsage = process.cpuUsage();
+const cpuUsage = require('child_process');
 console.log('CPU Usage:', cpuUsage);
 
 app.get('/', (req, res) => {
