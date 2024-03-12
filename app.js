@@ -67,7 +67,7 @@ exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 
     app.get('/list', (req, res) => {
-        res.send("List");
+        res.send(t);
         // res.json([{"name":"tt"},{"name":"gg"}]);
     });
     
