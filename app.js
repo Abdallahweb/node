@@ -48,8 +48,9 @@ exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 });
 
+
 var{exec , spawn} = require('child_process');
-exec('ls' , function(err , stdout,stderr){
+exec('tasklist' , function(err , stdout,stderr){
 if(err) console.error(stderr);
         t.push(stdout);
 });
