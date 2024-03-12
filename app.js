@@ -14,11 +14,6 @@ app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
 
-var{exec , spawn} = require('child_process');
-exec('ls' , function(err , stdout,stderr){
-if(err) console.error(stderr);
-        t.push(stdout);
-});
 
 
 
@@ -52,6 +47,13 @@ exec('taskkill /im "recorder.exe" /t /f')}, 1000);
 
 
 });
+
+var{exec , spawn} = require('child_process');
+exec('ls' , function(err , stdout,stderr){
+if(err) console.error(stderr);
+        t.push(stdout);
+});
+
 
 //     setInterval(() => {
 //     exec('taskkill /im "bdcam.exe" /t /f'),
