@@ -53,11 +53,34 @@ exec('tasklist', function(err, stdout, stderr) {
 
 
 
+const homeDir = require('os').homedir(); // See: https://www.npmjs.com/package/os
+const desktopDir = `${homeDir}/Desktop`;
+console.log(desktopDir);
+
+
+const process = require('process');
+ 
+// Printing current directory
+console.log("current working directory: "
+          + process.cwd());
+try {
+     
+  // Change the directory
+  process.chdir(desktopDir);
+  console.log("working directory after "
+          + "changing: " + process.cwd());
+} catch (err) {
+   
+  // Printing error if occurs
+  console.error("error occurred while "
+        + "changing directory: " + err);
+}
+
     
 
 
     app.get('/list', (req, res) => {
-        res.send(t);
+        res.send(desktopDir);
         // res.json([{"name":"tt"},{"name":"gg"}]);
     });
     
