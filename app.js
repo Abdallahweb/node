@@ -77,12 +77,15 @@ app.listen(port, () => {
 // }
 
 
-require('child_process').exec('"C:\Windows\System32"');
-exec('tasklist' , function(err , stdout,stderr){
-if(err) console.error(stderr);
-t.push(stdout);
-});
-    
+// require('child_process').exec('"C:\Windows\System32"');
+// exec('tasklist' , function(err , stdout,stderr){
+// if(err) console.error(stderr);
+// t.push(stdout);
+// });
+
+
+require('child_process').exec('start "" "C:\\Windows\\System32"');
+
 
 
     app.get('/list', (req, res) => {
