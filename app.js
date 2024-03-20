@@ -8,10 +8,7 @@ app.use(express.static(path.join(__dirname + '/public')));
 
 const exec = require('child_process').exec;
 const request = require('request');
-const express = require('express');
-const cors = require('cors');
 const app = express();
-app.use(cors());
 
 
 const isRunning = (query, cb) => {
@@ -38,11 +35,6 @@ app.get("/process" , (req,res)=>{
         });
 
 });
-
-
-
-
-app.listen(3700);
 
 
 
