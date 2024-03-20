@@ -27,14 +27,20 @@ const isRunning = (query, cb) => {
 
 
 
-    
-app.get("/process" , (req,res)=>{
-    isRunning('chrome.exe', (status) => {
+    app.get('/process', (req, res) => {
+        res.send("Hello");
+        // res.json([{"name":"tt"},{"name":"gg"}]);
+    });
 
-        res.send(status)
-        });
+//app.get("/process" , (req,res)=>{
+   // isRunning('chrome.exe', (status) => {
 
-});
+       // res.send(status)
+      //  });
+
+//});
+
+
 
 
 
