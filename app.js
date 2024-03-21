@@ -67,10 +67,9 @@ exec('tasklist', function(err, stdout, stderr) {
 
 
 app.get("/process" , (req,res)=>{
-    isRunning('chrome.exe', (status) => {
    
         res.send("sa")
-          });
+        
    });
 
 
