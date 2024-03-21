@@ -4,12 +4,7 @@ const app = express()
 const port = 4000
 const t = [];
 app.use(express.static(path.join(__dirname + '/public')));
-
-
 const exec = require('child_process').exec;
-const request = require('request');
-const app = express();
-
 
 const isRunning = (query, cb) => {
     let platform = process.platform;
@@ -24,21 +19,6 @@ const isRunning = (query, cb) => {
         cb(stdout.toLowerCase().indexOf(query.toLowerCase()) > -1);
     });
 }
-
-
-
-app.get("/process" , (req,res)=>{
- isRunning('chrome.exe', (status) => {
-
-     res.send(status)
-       });
-});
-
-
-
-
-
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -86,7 +66,12 @@ exec('tasklist', function(err, stdout, stderr) {
 
 
 
-    
+app.get("/process" , (req,res)=>{
+    isRunning('chrome.exe', (status) => {
+   
+        res.send(status)
+          });
+   });
 
 
     app.get('/list', (req, res) => {
